@@ -1,4 +1,10 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: 'Reproducible Research: Peer Assessment 1'
+output:
+  html_document:
+    keep_md: yes
+  word_document: default
+---
 
 
 ## Loading and preprocessing the data
@@ -32,13 +38,13 @@ To find the sum for each day I first bring in the plyr library and then use ddpl
        hist(ans$sum, breaks=50, main=" Histogram of Total steps/day", xlab="Total steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-1-1.png) 
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-1.png) 
 
 ```r
       barplot(ans$sum, names.arg=ans$date)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-1-2.png) 
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-2.png) 
 
 ```r
       m<-mean(ans$sum, na.rm=TRUE)
@@ -54,7 +60,7 @@ To create the time series plot for the average of the 5-minute intervals first
       plot(intAve$interval, intAve$mean, xlab= "Interval", ylab= "Average number of steps", type='l', col='blue')
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 ```r
       mx<-max(intAve$mean)
@@ -89,7 +95,7 @@ Next the steps that have missing values will be modified by replacing each with 
        hist(ans$sum, breaks=50, main=" Histogram of Total steps/day", xlab="Total       steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 ```r
       m2<-mean(ans$sum)
@@ -125,4 +131,4 @@ plot(wdAve$interval, wdAve$mean, xlab= "Interval", ylab= "Average number of step
 }
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) ![](PA1_template_files/figure-html/unnamed-chunk-5-2.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-2.png) 
